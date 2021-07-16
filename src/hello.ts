@@ -41,6 +41,7 @@ const picture: Picture = {
 let newPicture = {} as Picture;
 newPicture.id = 2;
 newPicture.title = "las fantasias";
+newPicture.orientation = PhotoOrientation.Landscape;
 
 console.log('album',album);
 console.log('picture',picture);
