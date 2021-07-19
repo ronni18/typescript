@@ -31,6 +31,11 @@ var Album = /** @class */ (function () {
     return Album;
 }());
 var album = new Album(1, 'personal picture');
-var picture = new Picture(1, 'roni personal', PhotoOrientation.Portrait);
+var picture = new Picture(1, 'roni personal', PhotoOrientation.Square);
 album.addPicture(picture);
-console.log('album', album);
+console.log(album);
+//accediendo a los miembros publicos
+//picture.id = 100;
+///picture.title = 'nuevo titulo';
+///album.title = 'nuevo album';
+//console.log(album);

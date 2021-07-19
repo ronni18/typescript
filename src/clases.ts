@@ -10,12 +10,12 @@ enum PhotoOrientation{
  class Picture {
 
 
-    id:number;
-    title:string;
-    orientation: PhotoOrientation;
+   private id:number;
+   private title:string;
+   private orientation: PhotoOrientation;
   
 
-    constructor(id:number,
+   public constructor(id:number,
                 title:string,
                 orientation: PhotoOrientation) {
                     this.id = id;
@@ -26,7 +26,7 @@ enum PhotoOrientation{
 
     //comportamiento
 
-    toString (){
+   public toString (){
         return `[id: ${this.id},
                 title: ${this.title},
                 orientation: ${this.orientation}]`
@@ -39,26 +39,35 @@ enum PhotoOrientation{
 class Album {
 
 
-    id: number;
-    title: string;
-    pictures: Picture[];
+    private id:number;
+    private title:string;
+    private pictures: Picture[];
 
 
-    constructor(  id: number, title: string ) {
+   public constructor(  id: number, title: string ) {
         this.id = id;
         this.title = title;
         this.pictures = [];
         
     }
 
-    addPicture( picture: Picture) {
+  public addPicture( picture: Picture) {
         this.pictures.push( picture );
     }
 }
 
 const album: Album = new Album(1, 'personal picture');
-const picture: Picture = new Picture(1, 'roni personal', PhotoOrientation.Portrait);
+const picture: Picture = new Picture(1, 'roni personal', PhotoOrientation.Square);
 
 album.addPicture( picture );
 
-console.log('album',album);
+console.log(album);
+
+
+//accediendo a los miembros publicos
+
+//picture.id = 100;
+///picture.title = 'nuevo titulo';
+///album.title = 'nuevo album';
+
+//console.log(album);
